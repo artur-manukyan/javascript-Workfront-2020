@@ -20,3 +20,5 @@ else {
         console.log(resultNum);
     }
 }
+
+//second algorythm - while,rresult = 0, num %10, result * last digit, num/10 floor
