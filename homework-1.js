@@ -60,3 +60,9 @@ else {
     }
 }
 
+
+/* 6. Given five numbers as input. Calculate and print the average of the numbers(without
+using arrays).*/
+
+
+
