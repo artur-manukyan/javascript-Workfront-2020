@@ -49,14 +49,12 @@ switch (unit) {
 
 //9. Given three numbers. Sort them by the ascending order.
 
-//Half solution...
 let input1 = prompt('Input 1');
 let input2 = prompt('Input 2');
 let input3 = prompt('Input 3');
 let givenNum1 = +input1;
 let givenNum2 = +input2;
 let givenNum3 = +input3;
-
 let min = givenNum1;
 let mid = 0;
 let max = 0;
@@ -64,30 +62,37 @@ let max = 0;
 if (givenNum1 <= givenNum2){
     min = givenNum1;
 } 
-
 if (givenNum2 <= min){
     min = givenNum2;
 } 
-
 if (givenNum3 <= min){
     min = givenNum3;
 }
-
-console.log(min, ' mid ', 'max');
-
 if (givenNum1 >= givenNum2){
     max = givenNum1;
 } 
-
 if (givenNum2 >= max){
     max = givenNum2;
 } 
-
 if (givenNum3 >= max){
     max = givenNum3;
 }
-
-console.log(min, ' mid ', max);
+if (max === givenNum1 && min === givenNum3){
+    mid = givenNum2;
+} else if (max === givenNum1 && min === givenNum2){
+    mid = givenNum3;
+}
+if (max === givenNum2 && min === givenNum3){
+    mid = givenNum1;
+} else if (max === givenNum2 && min === givenNum1){
+    mid = givenNum3;
+}
+if (max ===givenNum3 && min === givenNum1){
+    mid = givenNum2;
+} else if (max === givenNum3 && min === givenNum2){
+    mid = givenNum1;
+}
+console.log(min,mid,max);
 
 //Half solution 2...
 let input1 = prompt('Input 1');
