@@ -17,7 +17,7 @@ if (unit === 'years' && age >= 1 && age <=2) {
     console.log('child');
 } else if (unit === 'years' && age >= 13 && age <=17) {
     console.log('teenager');
-} else if (unit === 'years' && age >= 8) {
+} else if (unit === 'years' && age >= 18) {
     console.log('adult');
 }
 
