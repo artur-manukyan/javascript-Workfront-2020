@@ -49,6 +49,31 @@ console.log(resultNum);
 /*5. Given a positive integer. Bring the last digit of the number to the beginning. Print the new
 number. If the last digit of the inserted number is 0, number remains the same.*/
 
+// Option 1.
+var num = +prompt('Input')
+var temp = num % 10;
+var count = 0;
+var backup = num;
+
+if (num < 0){
+    console.log('Please input a positive integer.');
+}
+
+if (num % 10 === 0){
+    console.log(num)
+} else {
+    while(backup > 0){
+    backup = Math.floor(backup/10);
+            count++;
+    }
+    num = Math.floor(num/10);
+
+    var lastToFront = (temp * Math.pow(10,count-1))
+    var result = num + lastToFront;
+    console.log(result);
+}
+
+// Option 2. Using Strings
 let input = prompt('Input');
 let givenNum = +input;
 if (givenNum < 0) {
@@ -68,8 +93,6 @@ else {
         console.log(resultNum);
     }
 }
-
-//second option --  algorythm - while,rresult = 0, num %10, result * last digit, num/10 floor write if there is a time
 
 
 /* 6. Given five numbers as input. Calculate and print the average of the numbers(without
@@ -143,8 +166,7 @@ if (unit === 'years' && age >= 1 && age <=2) {
     console.log('adult');
 }
 
-/////////// Option 2. Using Switch
-
+// Option 2. Using Switch
 let age = prompt('Input age');
 let givenAge = +age;
 let unit = prompt('Input unit: enter either "months" or "years"');
@@ -217,7 +239,7 @@ if (max ===givenNum3 && min === givenNum1){
 }
 console.log(min,mid,max);
 
-////////// Option 2. This solution doesn't work correctly with negative numbers and 0 combinations.
+// Option 2. This solution doesn't work correctly with negative numbers and 0 combinations.
 let input1 = prompt('Input 1');
 let input2 = prompt('Input 2');
 let input3 = prompt('Input 3');
@@ -287,7 +309,6 @@ if (exam1pass === true && exam2pass === true && exam3pass === true){
            exam1pass === true  && exam2pass === true  && exam3pass === false){
     onefail = true;
 }
-
 
 if (allpass === true){
     console.log('Passed');
