@@ -280,7 +280,6 @@ if (exam1pass === true && exam2pass === true && exam3pass === true){
 }
 
 
-
 if (allpass === true){
     console.log('Passed');
 } else if (onefail === true && averageScore >= 50){
@@ -293,7 +292,60 @@ if (allpass === true){
 /*11. Find the sign of product of three numbers without multiplication operator. Display the
 specified sign.*/
 
+let input1 = prompt('Input 1');
+let input2 = prompt('Input 2');
+let input3 = prompt('Input 3');
+let givenNum1 = +input1;
+let givenNum2 = +input2;
+let givenNum3 = +input3;
+
+if (givenNum1 == 0 || givenNum2 == 0 || givenNum3 == 0) {
+  console.log("unsigned");
+}
+
+else if (givenNum1 > 0 && givenNum2 > 0 && givenNum3 > 0) {
+  console.log( "+");
+  }
+else if (givenNum1 < 0 && givenNum2 < 0 && givenNum3 > 0) {
+  console.log("+");
+  }
+else if (givenNum1 < 0 && givenNum3 < 0 && givenNum2 > 0) {
+  console.log ("+");
+  }
+else if (givenNum3 < 0 && givenNum2 < 0 && givenNum1 > 0) {
+  console.log ("+");
+}
+else {
+  console.log("-");
+}
+
+
 /*12. Input three numbers a, b, c respectively, where a is a non zero number and write a
 program to solve quadratic equations: . (Hint: use Math.pow or Math.sqrt).*/
+
+let input1 = prompt('Input 1');
+let input2 = prompt('Input 2');
+let input3 = prompt('Input 3');
+let a = +input1;
+let b = +input2;
+let c = +input3;
+
+let D = Math.pow(b,2) - (4*a*c);
+let x1 = (-b + Math.sqrt(D)) / (2*a);
+let x2 =(-b - Math.sqrt(D)) / (2*a);
+
+if (a === 0){
+    console.log('Enter a valid const.');
+} else if (D > 0) {
+    console.log(`Solutions are ${x1} and ${x2}`);
+} else if (D === 0){
+    console.log(-b / (2*a));
+} else if (D < 0){
+    console.log('Solution does not exist')
+}
+
+
+/*13. Given the following code rewrite it using only two if operators. (Hint: use logical
+operators).*/
 
 
