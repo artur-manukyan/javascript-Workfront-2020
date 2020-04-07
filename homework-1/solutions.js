@@ -235,4 +235,65 @@ if (givenNum3 >= givenNum1 + givenNum2 && givenNum2 >= givenNum1){
     console.log (givenNum1 ,givenNum2,givenNum3);} 
 
 if (givenNum3 >= givenNum1 + givenNum2 && givenNum1 >= givenNum2){
-    console.log (givenNum2,givenNum1 ,givenNum3);} 
+    console.log (givenNum2,givenNum1 ,givenNum3);}
+
+
+/*10. Percentage marks obtained by a student in three exams are to be entered to a
+computer. An indication of Pass or Fail is given out after the three marks are entered.
+The criteria for passing are as follows:
+a. A student passes if all three examinations are passed.
+b. Additionally a student may pass if only one subject is failed but the overall
+average is greater than or equal to 50.
+The pass mark for an individual subject is 40.*/
+
+var input1 = prompt('Input 1');
+var input2 = prompt('Input 2');
+var input3 = prompt('Input 3');
+var exam1score = +input1;
+var exam2score = +input2;
+var exam3score = +input3;
+var averageScore = (exam1score + exam2score + exam3score) / 3;
+var exam1pass = false;
+var exam2pass = false;
+var exam3pass = false;
+var allpass = false;
+var onefail = false;
+
+if (exam1score >= 40){
+    exam1pass = true;
+}
+
+if (exam2score >= 40){
+    exam2pass = true;
+}
+
+if (exam3score >= 40){
+    exam3pass = true;
+}
+
+if (exam1pass === true && exam2pass === true && exam3pass === true){
+    allpass = true;
+} else if (exam1pass === false && exam2pass === true  && exam3pass === true ||
+           exam1pass === true  && exam2pass === false && exam3pass === true ||
+           exam1pass === true  && exam2pass === true  && exam3pass === false){
+    onefail = true;
+}
+
+
+
+if (allpass === true){
+    console.log('Passed');
+} else if (onefail === true && averageScore >= 50){
+    console.log('Passed')
+} else {
+    console.log('Not Passed')
+}
+
+
+/*11. Find the sign of product of three numbers without multiplication operator. Display the
+specified sign.*/
+
+/*12. Input three numbers a, b, c respectively, where a is a non zero number and write a
+program to solve quadratic equations: . (Hint: use Math.pow or Math.sqrt).*/
+
+
