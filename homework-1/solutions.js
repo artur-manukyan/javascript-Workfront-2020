@@ -1,3 +1,12 @@
+/***
+ *                      .___       
+ *      ____   ____   __| _/ ____  
+ *    _/ ___\ /  _ \ / __ |_/ __ \ 
+ *    \  \___(  <_> ) /_/ |\  ___/ 
+ *     \___  >\____/\____ | \___  >
+ *         \/            \/     \/ 
+ */
+
 // 1. Given a number. Print “odd” if the number is odd and “even” if it’s even.
 
 let input = prompt('Input');
@@ -348,4 +357,124 @@ if (a === 0){
 /*13. Given the following code rewrite it using only two if operators. (Hint: use logical
 operators).*/
 
+var n = +prompt();
 
+var i = 0;
+var j = 0;
+
+if (n % 2 === 0 && n !== 0){
+        i += 1;    
+}
+
+if  (n % 3 === 0 && n % 10 === 1){
+    j += 1;
+}
+
+
+// 14. Insert a digit and a number. Check whether the digits contains in the number or not.
+
+let digit = +prompt('digit');
+let number = +prompt('number');
+debugger;
+while (number > 0){
+    var lastDigit = number % 10;
+    if (lastDigit === digit){
+        console.log('Yes');
+        break;
+    } else {
+          number = Math.floor(number/10);  
+      }
+
+}
+
+if (number === 0){
+    console.log('No');
+}
+
+
+// 15. Enter a number. Reverse its first and last digits. Print the new number.
+
+var num = +prompt('Input')
+var temp = num % 10;
+var count = 0;
+var backup = num;
+
+while(backup > 0) {
+    backup = Math.floor(backup/10);
+            count++; 
+}
+num = Math.floor(num/10);
+
+var lastToFront = (temp * Math.pow(10,count-1));
+var middle = (num % Math.pow(10,count-2) )*10;
+var frontToLast = Math.floor((num/Math.pow(10,count-2))); 
+
+var result = (lastToFront + middle + frontToLast);
+console.log(result);
+
+
+// 16. aaa
+
+// ¯\_(ツ)_/¯
+
+
+/*17. Write a program which will compute the area of a rectangular or a triangle after
+prompting the user to type the name of the figure name. Also check that entered
+numbers are positive.
+For the triangle entered numbers are height and and base.*/
+
+var figure =  prompt('triangle | rectangle');
+
+if (figure === 'triangle'){
+    var base = +prompt('base');
+    var triangleHeight = +prompt('height')
+} else if (figure === 'rectangle'){
+    var width = +prompt('width');
+    var rectangleHeight = +prompt('height')
+       }
+
+switch(figure){
+    case 'triangle':
+        if (base <= 0 || triangleHeight <= 0){
+            console.log('Please enter only positives');
+        } else {
+            console.log(`Square of the triangle is ${(base * triangleHeight)/2}`);
+          }
+        break;
+
+    case 'rectangle':
+        if (width <= 0 || rectangleHeight <= 0){
+            console.log('Please enter only positives');
+        } else {
+            console.log(`Square of the rectangle is ${(width * rectangleHeight)}`);
+          }
+        break;
+}    
+
+
+// 18. (***) Enter a number. Find the difference between its biggest and smallest digits.
+     
+var num = +prompt('Input');
+var numForMax = num;
+var min = num % 10;
+var max = num % 10;
+
+while (num > 0){
+    lastDigit = num % 10;
+    if (lastDigit <= min){
+        min = lastDigit;
+    }
+    num = Math.floor(num/10)
+}
+
+while (numForMax > 0){
+    lastDigitForMax = numForMax % 10;
+    if (lastDigitForMax >= max){
+        max = lastDigitForMax;
+    }
+    numForMax = Math.floor(numForMax/10)
+}
+
+console.log(max - min);
+
+// THANKS FOR YOUR TIME DEDICATED !
