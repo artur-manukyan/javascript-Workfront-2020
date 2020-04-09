@@ -143,6 +143,30 @@ else {
     console.log(`${givenNum} is not a multiple of 3, 5 or 7.`)        
 }
 
+// Optimized version. ¯\_(ツ)_/¯
+
+var num = +prompt('Input');
+var prefix = `${num} is a multiple of `;
+
+if (num % 105 === 0){
+    console.log(prefix + '3, 5 and 7.”')
+} else if (num % 35 === 0){
+    console.log(prefix + '5 and 7.')
+} else if (num % 21){
+    console.log(prefix + '3 and 7.')
+} else if (num % 15){
+    console.log(prefix + '3 and 5.')
+} else if (num % 7 === 0){
+    console.log(prefix + '7.')
+} else if (num % 5 === 0){
+    console.log(prefix + '5.')
+} else if (num % 3 === 0){
+    console.log(prefix + '3.')
+} else {
+    console.log(`${num} is not a multiple of 3, 5 or 7.`)
+}
+
+
 
 /*8. Given an age, figure out whether someone is a baby(1 months - 12 months), toddler (1
 year - 2 years), child(3 years - 12 years ), teenager(13 years - 17 years) or adult(18
