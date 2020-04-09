@@ -498,4 +498,25 @@ while (numForMax > 0){
 
 console.log(max - min);
 
+// Optimized version.
+
+var num = +prompt('Input');
+var min = num % 10;
+var max = num % 10;
+
+while (num > 0){
+    lastDigit = num % 10;
+    lastDigitForMax = num % 10;
+    if (lastDigit <= min){
+        min = lastDigit;
+    }
+    
+    if (lastDigitForMax >= max){
+        max = lastDigitForMax;
+    }
+    num = Math.floor(num/10)
+}
+
+console.log(max - min);
+
 // THANKS FOR YOUR TIME DEDICATED !
