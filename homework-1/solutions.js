@@ -144,7 +144,6 @@ else {
 }
 
 // Option 2.
-
 var num = +prompt('Input');
 var prefix = `${num} is a multiple of `;
 
@@ -167,7 +166,6 @@ if (num % 105 === 0){
 }
 
 // Option 3.
-
 function multiple(number){
     let result = '';
     let counter = 0;
@@ -195,7 +193,6 @@ function multiple(number){
 }
 
 // Option 4.
-
 isMultiple = (number) => {
     debugger;
     let message = `${number} is not a multiple of 3, 5 and 7.`;
@@ -240,7 +237,7 @@ if (unit === 'years' && age >= 1 && age <=2) {
     console.log('adult');
 }
 
-// Option 2. Using Switch
+// Option 2.
 let age = prompt('Input age');
 let givenAge = +age;
 let unit = prompt('Input unit: enter either "months" or "years"');
@@ -423,6 +420,20 @@ else {
   console.log("-");
 }
 
+// Option 2.
+function findSign(num1, num2, num3){
+    let counter = 0;
+    debugger;
+    if (num1 === 0 || num2 === 0 || num3 === 0){
+        console.log('unsigned');
+        return;
+    }
+    num1 < 0 ? counter++ : counter;
+    num2 < 0 ? counter++ : counter;
+    num3 < 0 ? counter++ : counter;
+
+    return counter % 2 === 0 ? console.log('+') : console.log('-');
+}
 
 /*12. Input three numbers a, b, c respectively, where a is a non zero number and write a
 program to solve quadratic equations: . (Hint: use Math.pow or Math.sqrt).*/
