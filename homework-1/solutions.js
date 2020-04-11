@@ -265,6 +265,27 @@ switch (unit) {
 
 //9. Given three numbers. Sort them by the ascending order.
 
+// Best Option
+function sortNumbers(a, b, c){
+    if (a > b){
+        let t = b;
+        b = a;
+        a = t;
+    }
+    if (a > c){
+        let t = c;
+        c = a;
+        a = t;
+    }
+    if (b > c){
+        let t = b;
+        b = c;
+        c = t;
+    }     
+    return `${a}, ${b}, ${c}`
+}
+
+// Option 2.
 let input1 = prompt('Input 1');
 let input2 = prompt('Input 2');
 let input3 = prompt('Input 3');
@@ -310,7 +331,7 @@ if (max ===givenNum3 && min === givenNum1){
 }
 console.log(min,mid,max);
 
-// Option 2. This solution doesn't work correctly with negative numbers and 0 combinations.
+// Option 3. This solution doesn't work correctly with negative numbers and 0 combinations.
 let input1 = prompt('Input 1');
 let input2 = prompt('Input 2');
 let input3 = prompt('Input 3');
