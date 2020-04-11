@@ -143,7 +143,7 @@ else {
     console.log(`${givenNum} is not a multiple of 3, 5 or 7.`)        
 }
 
-// Optimized version. ¯\_(ツ)_/¯
+// Option 2.
 
 var num = +prompt('Input');
 var prefix = `${num} is a multiple of `;
@@ -166,6 +166,56 @@ if (num % 105 === 0){
     console.log(`${num} is not a multiple of 3, 5 or 7.`)
 }
 
+// Option 3.
+
+function multiple(number){
+    let result = '';
+    let counter = 0;
+    for (let i = 3; i < 8; i = i + 2)
+        if (number % i === 0){
+            counter++;
+            
+            switch(counter){
+                case 3:
+                    result = "3, 5 and 7.";
+                    break;
+                case 2:
+                    result = result + ' and ' + i;
+                    break;
+                default:
+                    result =     result + i;
+                    break;
+            }
+        }
+    if (counter === 0) {
+    console.log(`${number} is not a multiple of 3, 5 or 7.`);
+    return;
+    }
+    console.log(`${number} is a multiple of ${result}`);
+}
+
+// Option 4.
+
+isMultiple = (number) => {
+    debugger;
+    let message = `${number} is not a multiple of 3, 5 and 7.`;
+    let text = '';
+    let counter = 0;
+
+    if ((number % 3 === 0)) {
+        text += 3;
+        counter++;
+    }
+    if ((number % 5 === 0)) {
+        text += text ? ',5' : '5';
+        counter++
+    }
+    if ((number % 7 ===0)) {
+        text += text ? counter > 1 ? 'and 7' : ',7' : '7';
+    }
+    message = text ? `${number} is a multiple of ${text}` : message;
+    return message;
+}
 
 
 /*8. Given an age, figure out whether someone is a baby(1 months - 12 months), toddler (1
