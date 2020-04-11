@@ -1,5 +1,5 @@
 // 1. Insert a number. Print ‘yes’ if the number is prime, ‘no’ otherwise.
-function isPrime(num){ 
+function solution1(num){ 
     counter = 0;
     for(i = num; i > 0; i--){
         num % i === 0 ? counter++ : counter;
@@ -9,7 +9,7 @@ function isPrime(num){
 
 
 // 2. Given a number n ( n>= 0 ). Print nth Fibonacci number.  (Fibonacci series: 0, 1, 1, 2, 3, 5, 8 …, ak = ak-1 + ak-2)
-function fib_n(position){
+function solution2(position){
     fibArray = [0, 1]
     for (let i = 1; true; i++){
         if (position === 0){return 0;}
@@ -22,7 +22,7 @@ function fib_n(position){
 
 
 // 3. Given a number n( n> 0 ). Print Fibonacci series up to n.
-function fib_untill_n(threshold){
+function solution3(threshold){
     fibArray = [0, 1]
     for (let i = 1; true; i++){
         if (threshold === 0 || threshold === 1){return 0;}
@@ -38,7 +38,7 @@ function fib_untill_n(threshold){
 
 /* 4. Insert a number. Calculate product and sum of the digits of the number. If product is divisible by the sum, 
 print the quotient, otherwise print the remainder.*/
-function div(num){
+function solution4(num){
     if (num === 0){return 'Cannot Calculate'}
     let sum = 0;
     let prod = 1;
