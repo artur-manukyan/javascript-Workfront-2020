@@ -49,3 +49,21 @@ function solution4(num){
     }
 return prod % sum === 0 ? `Quotient is ${prod/sum}` : `Remainder is ${prod % sum}`
 }
+
+
+/* 5. Given three numbers a, b (a ≤ b) and num. Create an array of evenly spaced numbers by the given num length over the specified 
+interval (from a to b).*/
+function solution5(start, end, len){
+    let array = new Array(len);
+    let step = (end - start) / (len - 1);
+    if(len === 1){
+        array[0] = start;
+        return array;
+    }
+    array[0] = start;
+    array[array.length-1] = end;
+    for (let i = 0; i < len-1; i++){
+        array[i + 1] = +(array[i] + step).toPrecision(2);
+    }
+    return array;
+}
