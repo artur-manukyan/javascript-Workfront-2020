@@ -34,3 +34,18 @@ function fib_untill_n(threshold){
         }
     }
 }
+
+
+/* 4. Insert a number. Calculate product and sum of the digits of the number. If product is divisible by the sum, 
+print the quotient, otherwise print the remainder.*/
+function div(num){
+    if (num === 0){return 'Cannot Calculate'}
+    let sum = 0;
+    let prod = 1;
+    while(num > 0){
+        sum += num % 10;
+        prod *= num % 10;
+        num = Math.floor(num/10);
+    }
+return prod % sum === 0 ? `Quotient is ${prod/sum}` : `Remainder is ${prod % sum}`
+}
