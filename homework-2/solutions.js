@@ -67,3 +67,27 @@ function solution5(start, end, len){
     }
     return array;
 }
+
+
+// 6. Given an array of numbers. Find the index of the second maximum element.
+function solution6(list){
+    let backup = [];
+    for(let i = 0; i < list.length; i++){
+        backup[i] = list[i]
+    }
+    let min = list[0];
+    debugger;
+    while (list.length > 2){
+        for (let i = 0; i < list.length; i++){
+            if(list[i+1] < min){
+                min = list[i+1]
+            }
+        }
+    list.splice(list.indexOf(min),1);
+    min = list[0];
+    }
+    if(list[0] > list[1]){
+        list[0] = list[1];
+    }
+return backup.indexOf(list[0]);
+}
