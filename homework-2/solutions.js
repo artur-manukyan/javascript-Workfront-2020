@@ -91,3 +91,27 @@ function solution6(list){
     }
 return backup.indexOf(list[0]);
 }
+
+
+/* 7. Given an array of numbers, padding amount and repeat count. Pad the array in the following way: 
+the padding amount specifies how many elements should be taken from the array edges, the repeat amount 
+specifies how many times the pad should be repeated. Also, you should check that  padding amount <= length of array.*/
+function solution7(list, pad, rep){
+    if (pad > list.length){
+        return 'Invalid padding amount'
+    } 
+    let backup = [];
+    for (let i = 0; i < list.length; i++){
+        backup[i] = list[i];
+    }
+    while(rep > 0){
+        for (let i = pad - 1; i >= 0; i--){
+            list.unshift(backup[i]);  
+        }
+        for (let i = backup.length-pad; i < backup.length; i++){
+            list.push(backup[i]);    
+        }
+        rep--
+    }
+return list
+}
