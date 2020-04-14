@@ -1,4 +1,18 @@
 // 1. Insert a number. Print ‘yes’ if the number is prime, ‘no’ otherwise.
+// Version Optimized.
+function solution1(num){ 
+    counter = 0;
+    for(i = num; i > 0; i--){
+        num % i === 0 ? counter++ : counter;
+        if (counter>2){ 
+            return 'No'
+        }
+   
+    }
+    return 'Yes'
+}
+
+// Version 2.
 function solution1(num){ 
     counter = 0;
     for(i = num; i > 0; i--){
