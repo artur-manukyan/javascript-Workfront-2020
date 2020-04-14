@@ -45,6 +45,7 @@ function solution4(num){
     while(num > 0){
         sum += num % 10;
         prod *= num % 10;
+       
         num = Math.floor(num/10);
     }
 return prod % sum === 0 ? `Quotient is ${prod/sum}` : `Remainder is ${prod % sum}`
@@ -70,13 +71,31 @@ function solution5(start, end, len){
 
 
 // 6. Given an array of numbers. Find the index of the second maximum element.
+// Version Optimized.
+function solution6(list){
+    let max = list[0];
+    for (let i = 0; i < list.length-1; i++){
+            if(list[i+1] > max){
+                max = list[i+1]
+            }
+        }
+    list[list.indexOf(max)] = undefined;    
+    max = list[0]
+    for (let i = 0; i < list.length-1; i++){
+            if(list[i+1] > max){
+                max = list[i+1]
+            }
+        }
+return list.indexOf(max);
+}
+
+// Version 2.
 function solution6(list){
     let backup = [];
     for(let i = 0; i < list.length; i++){
         backup[i] = list[i]
     }
     let min = list[0];
-    debugger;
     while (list.length > 2){
         for (let i = 0; i < list.length; i++){
             if(list[i+1] < min){
