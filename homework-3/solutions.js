@@ -8,4 +8,5 @@ function solution1(num){
 }
 
 
-// 2.  Given an array of numbers. Write a recursive function to find its minimal positive element. (if such element does not exist, return -1).
+/* 2.  Given an array of numbers. Write a recursive function to find its minimal positive element. 
+(if such element does not exist, return -1).*/
