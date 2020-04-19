@@ -66,3 +66,24 @@ debugger;
     }
 return store;
 }
+
+
+/*5. Given a number. Write a function that calculates its sum of the digits and if that sum has more than 1 digit 
+find the sum of digits of that number. Repeat that process if needed and return the result.*/
+function sumOfDigits(digits){
+    sum = 0;
+    while(digits > 0){
+        sum += digits % 10;
+        digits = Math.floor(digits/10);
+    }
+return sum;
+}
+
+
+function solution5(num){
+    if (!Math.trunc(num/10)){
+        return num;
+    } else {
+        return solution5(sumOfDigits(num));  
+    }
+}
