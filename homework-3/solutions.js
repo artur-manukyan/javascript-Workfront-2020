@@ -10,6 +10,30 @@ function solution1(num){
 
 /* 2.  Given an array of numbers. Write a recursive function to find its minimal positive element. 
 (if such element does not exist, return -1).*/
+function min(num1, num2){
+    if(num1 < 0 && num2 < 0){
+        return -1;
+    } else if (num1 < 0){
+        return num2;
+    } else if (num2 < 0){
+        return num1;
+    } else if (num1 < num2){
+        return num1;
+    } else if (num2 < num1){
+        return num2;
+    }
+}
+
+function solution2(arr){
+    /*if (arr.length === 1 && arr[0] > 0) {
+        return arr[0];
+    } else if (arr.length === 1 && arr[0] < 0){
+        return -1;
+    }*/ 
+    return min(arr.shift(),solution2(arr))
+}
+
+// Version 2.
 function solution2(arr) {
 var counter = 0;
     for (let i = 0; i < arr.length; i++){
