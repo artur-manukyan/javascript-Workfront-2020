@@ -36,6 +36,16 @@ function solution2(position){
 
 
 // 3. Given a number n( n> 0 ). Print Fibonacci series up to n.
+function solution3 (n) {
+    let store = [0,1];
+    while (n > 0){
+        store.push(store[store.length-1] + store[store.length-2]);
+        n--;
+    }
+return store
+}
+
+// Version 2.
 function solution3(threshold){
     fibArray = [0, 1]
     for (let i = 1; true; i++){
