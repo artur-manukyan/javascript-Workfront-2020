@@ -41,5 +41,5 @@ function solution3(limit, store = [1, 1]) {
         return store;
     }
     store.push(store[store.length-1] + store[store.length-2]);
-    return meow(limit,store);
+    return solution3(limit,store);
 }
