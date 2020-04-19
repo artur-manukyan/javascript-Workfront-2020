@@ -43,3 +43,26 @@ function solution3(limit, store = [1, 1]) {
     store.push(store[store.length-1] + store[store.length-2]);
     return solution3(limit,store);
 }
+
+// 4. Given an array of nested arrays. Write a recursive function that flattens it. (Hint create function that concats arrays).
+function concat(array1, array2){
+debugger;
+    while(array2.length > 0){
+        array1.push(array2[0]); 
+        array2.shift();
+    }
+return array1;
+}
+
+function solution4(array){
+debugger;
+    let store = [];
+    for (let i = 0; i <= array.length-1; i++){
+        if (typeof array[i] !== 'object'){
+            store.push(array[i]);
+        } else {
+            store = concat(store,solution4(array[i]));
+        }
+    }
+return store;
+}
