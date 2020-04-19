@@ -31,7 +31,7 @@ var counter = 0;
 
 
 // 3. Write a recursive function which receives  a number as arguments and returns the fibonacci sequence as array.
-function solution3(limit, store = [0, 1]) {
+function solution3(limit, store = [1, 1]) {
     if (limit <= 0){
         return [];
     } else if (limit === 1) {
