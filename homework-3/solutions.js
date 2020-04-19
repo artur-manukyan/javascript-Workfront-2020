@@ -28,3 +28,18 @@ var counter = 0;
         return min;
     } 
 }
+
+
+// 3. Write a recursive function which receives  a number as arguments and returns the fibonacci sequence as array.
+function solution3(limit, store = [0, 1]) {
+    if (limit <= 0){
+        return [];
+    } else if (limit === 1) {
+        return [1];      
+    }
+    if(store.length === limit){
+        return store;
+    }
+    store.push(store[store.length-1] + store[store.length-2]);
+    return meow(limit,store);
+}
