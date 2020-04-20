@@ -23,7 +23,6 @@ function min(num1, num2){
         return num2;
     }
 }
-
 function solution2(arr){
     /*if (arr.length === 1 && arr[0] > 0) {
         return arr[0];
@@ -68,6 +67,7 @@ function solution3(limit, store = [1, 1]) {
     return solution3(limit,store);
 }
 
+
 // 4. Given an array of nested arrays. Write a recursive function that flattens it. (Hint create function that concats arrays).
 function concat(array1, array2){
 debugger;
@@ -77,7 +77,6 @@ debugger;
     }
 return array1;
 }
-
 function solution4(array){
 debugger;
     let store = [];
@@ -102,8 +101,6 @@ function sumOfDigits(digits){
     }
 return sum;
 }
-
-
 function solution5(num){
     if (!Math.trunc(num/10)){
         return num;
