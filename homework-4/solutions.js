@@ -66,6 +66,11 @@ let sortedBooks = books.sort(function (a, b) {
     if (a.percent > b.percent) {return -1}
 });
 
+// In case if only 'true' status books should be displayed:
+let filteredBooks = sortedBooks.filter(function(book){
+    return book.readStatus === true;
+});
+
 
 // 4. Given an array and a number N.  Write a recursive function that rotates an array N places to the left. 
 // (Hint: to add element to the beginning use arr.unshift())
