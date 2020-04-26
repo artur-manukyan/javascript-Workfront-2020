@@ -74,3 +74,24 @@ let filteredBooks = sortedBooks.filter(function(book){
 
 // 4. Given an array and a number N.  Write a recursive function that rotates an array N places to the left. 
 // (Hint: to add element to the beginning use arr.unshift())
+function recsolution4(arr, n){
+    if(n === 0){
+        return arr;
+    }
+    if(n > 0){
+        arr.unshift(arr[arr.length-1])
+        arr.pop()
+        n--
+    return recsolution4(arr,n)        
+    } else if (n < 0){
+        arr.push(arr[0])
+        arr.shift()
+        n++
+    return recsolution4(arr,n)
+    }
+return arr;   
+};
+
+
+//5. Create a function that builds a tree like object given an array with object which contains parent and id properties.
+
