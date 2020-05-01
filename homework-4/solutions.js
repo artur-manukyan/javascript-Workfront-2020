@@ -18,7 +18,6 @@ function solution2(obj) {
     entries.forEach(entry => {
     [entry[0], entry[1]] = [entry[1], entry[0]];
     });
-    
     for (let i = 0; i < entries.length; i++) {
         for (let j = i+1; j < entries.length; j++) {
             if (entries[i][0] === entries[j][0]) {
@@ -27,14 +26,12 @@ function solution2(obj) {
             }
         }
     }
-
     let uniques = []
     for (let i = 0; i < entries.length; i++) {
         if (entries[i].indexOf('remove this') === -1) {
             uniques.push(entries[i]);
         }
     }
-
     let resObj = {}
     for (let i = 0; i < uniques.length; i++) {
         if (uniques[i].length > 2) {
@@ -61,7 +58,6 @@ return resObj;
 let sortedBooks = books.sort(function (a, b) {
     if (a.readStatus < b.readStatus) {return 1}
     if (a.readStatus > b.readStatus) {return -1}    
-
     if (a.percent < b.percent) {return 1}
     if (a.percent > b.percent) {return -1}
 });
@@ -74,7 +70,7 @@ let filteredBooks = sortedBooks.filter(function(book){
 
 // 4. Given an array and a number N.  Write a recursive function that rotates an array N places to the left. 
 // (Hint: to add element to the beginning use arr.unshift())
-function recsolution4(arr, n){
+function solution4(arr, n){
     if(n === 0){
         return arr;
     }
@@ -82,16 +78,47 @@ function recsolution4(arr, n){
         arr.unshift(arr[arr.length-1])
         arr.pop()
         n--
-    return recsolution4(arr,n)        
+    return solution4(arr,n)        
     } else if (n < 0){
         arr.push(arr[0])
         arr.shift()
         n++
-    return recsolution4(arr,n)
+    return solution4(arr,n)
     }
 return arr;   
 };
 
 
 //5. Create a function that builds a tree like object given an array with object which contains parent and id properties.
+function solution5(arr){
+    const idIndex = arr.reduce((acc, el, i) => {
+    acc[el.id] = i;
+    return acc;
+    }, {});
+    let root;
+    arr.forEach(el => {
+        if (el.parent === null) {
+            root = el;
+            return;
+        }
+    const parentOfel = arr[idIndex[el.parent]];
+    parentOfel[el.id] = el;
+    });
+    var tree = {}
+    tree[root.id] = root;
+    arr.forEach(el => {
+        for (key in el) {
+            if(key === 'parent' || key === 'id'){
+                delete el[key];
+            }
+        }
+    });
+return tree;
+}
+
+
+// 6. Write a JavaScript function to get all possible subsets of given length of the given array.
+// Assume that all elements in the array are unique.
+
+
 
