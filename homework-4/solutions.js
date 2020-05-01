@@ -119,6 +119,31 @@ return tree;
 
 // 6. Write a JavaScript function to get all possible subsets of given length of the given array.
 // Assume that all elements in the array are unique.
+function solution6(arr, endIndex, sizeOfCombinations, currentIndex, data, startIndex){
+    if (currentIndex == sizeOfCombinations) {
+        let subArr = [];     
+        for (let j = 0; j < sizeOfCombinations; j++) { 
+            subArr.push(data[j])
+        }
+    result.push(subArr);
+    return; 
+    }
+    if (startIndex >= endIndex) {return;}       
+    data[currentIndex] = arr[startIndex];
+    solution6(arr, endIndex, sizeOfCombinations, currentIndex + 1, data, startIndex + 1);
+    solution6(arr, endIndex, sizeOfCombinations, currentIndex, data, startIndex + 1);
+};
+function printCombination(arr, r){
+    result = []
+    let n = arr.length;
+    const data = new Array(r);
+    solution6(arr, n, r, 0, data, 0);
+    return result;
+};
+
+
+// 7. Create constructor function which instances would be objects with already implemented method "map" (like Array.map).
+
 
 
 
