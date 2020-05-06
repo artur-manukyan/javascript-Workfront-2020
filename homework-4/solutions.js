@@ -143,7 +143,15 @@ function printCombination(arr, r){
 
 
 // 7. Create constructor function which instances would be objects with already implemented method "map" (like Array.map).
-
-
-
-
+function ObjectMap(){
+    this.map = function(doFunction){
+                    let result = {};
+                    let index = -1;
+                    let valArr = Object.values(this).slice()
+                    for (let key in this){
+                        key !== 'map' && (result[key] = doFunction(this[key], index, valArr));
+                    index++                       
+                    }
+                    return result;
+               }
+}
