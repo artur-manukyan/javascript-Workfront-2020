@@ -21,4 +21,31 @@
 return indexMap[0].index 
 }
 
+
+// 2. Create Tree
+function solution2(arr){
+    const idIndex = arr.reduce((acc, el, i) => {
+    acc[el.id] = i;
+    return acc;
+    }, {});
+    let root;
+    arr.forEach(node => {
+        if (node.id === 'root') {
+            root = node;
+        }
+        node.children.forEach(child => {
+            const childOfNode = arr[idIndex[child]];
+            node[child] = childOfNode;
+        });
+    });
+    arr.forEach(el => {
+        for (key in el) {
+            if(key === 'children' || key === 'id'){
+                delete el[key];
+            }
+        }
+    });
+return {root}
+}
+
 // THANKS FOR YOUR TIME DEDICATED !
