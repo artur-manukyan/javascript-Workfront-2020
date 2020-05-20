@@ -1,3 +1,12 @@
+/***
+ *                      .___       
+ *      ____   ____   __| _/ ____  
+ *    _/ ___\ /  _ \ / __ |_/ __ \ 
+ *    \  \___(  <_> ) /_/ |\  ___/ 
+ *     \___  >\____/\____ | \___  >
+ *         \/            \/     \/ 
+ */
+
 // 1. Given an array. Determine whether it consists only from unique elements or not.
 function solution1(givenArray){
     let setFromArray = new Set(givenArray);
@@ -33,3 +42,5 @@ function solution4(givenWord, givenList){
     }, []);
 return anagrams;    
 }
+
+// THANKS FOR YOUR TIME DEDICATED !
