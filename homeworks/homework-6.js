@@ -12,3 +12,14 @@ function solution2(givenArray){
     }, 0)
     return quadraticEvensSum;
 }
+
+
+// 3. Check whether string is palindrome, or not.
+function solution3(givenString){
+    let lowered = givenString.trim().toLowerCase();
+    let reversed = lowered.split('').reverse().join('');
+    return lowered === reversed ? true : false;
+}
+
+// 4. Given a word and a list of possible anagrams, select the correct sublist.
+
