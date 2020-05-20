@@ -25,10 +25,9 @@ function solution3(givenString){
 // 4. Given a word and a list of possible anagrams, select the correct sublist.
 function solution4(givenWord, givenList){
     sortString = str => {
-    return str.toLowerCase().split('').sort().join('')
-    }
+    return str.toLowerCase().split('').sort().join('') }
     let sortedWord = sortString(givenWord);
-    let anagrams = givenList.reduce((acc, item)=>{
+    let anagrams = givenList.reduce((acc, item) => {
         sortedWord === sortString(item) && acc.push(item)
         return acc;
     }, []);
