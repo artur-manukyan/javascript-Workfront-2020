@@ -16,7 +16,7 @@ function solution2(givenArray){
 
 // 3. Check whether string is palindrome, or not.
 function solution3(givenString){
-    let lowered = givenString.trim().toLowerCase();
+    let lowered = givenString.split(' ').join('').toLowerCase();
     let reversed = lowered.split('').reverse().join('');
     return lowered === reversed ? true : false;
 }
