@@ -31,6 +31,6 @@ function solution4(givenWord, givenList){
     let anagrams = givenList.reduce((acc, item)=>{
         sortedWord === sortString(item) && acc.push(item)
         return acc;
-    },[]);
+    }, []);
 return anagrams;    
 }
